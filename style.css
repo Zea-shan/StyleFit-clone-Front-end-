@@ -1,0 +1,255 @@
+/* navbar */
+
+.btnbtn{
+    background-color: rgb(255 49 49);
+    border: 2px;
+    color: white;
+    border-radius: 10px;
+}
+.btnbtn:hover{
+    color: white;
+    background-color:  rgb(208, 23, 23) ;
+   
+}
+.brandimg{
+    height: 2.5rem;
+    width: auto;
+}
+.nav-item:hover{
+    background-color: white ;
+     border-radius: 1rem;
+}
+.nav-link:hover{
+    color: rgb(255, 49, 49) !important;
+}
+.icon-button{
+    border: none;
+    background: transparent;
+    border-radius: 3px;
+    margin-right: 20px;
+    height: 35px;
+    width: 35px;
+}
+.icon-button:hover{
+    background-color: white ;
+    color: rgb(255, 49, 49) ;
+}
+.home{
+    color: rgb(255, 49, 49) !important;
+    background-color: rgb(240, 230, 230);
+       border-radius: 1rem;
+    
+}
+.nav-link{
+    font-weight: 500;
+    margin-right: 10px;
+}
+
+/* hero */
+
+.hero{
+background: url('https://www.crossfit.com/wp-content/uploads/2026/05/12094013/What-is-Murph-for-WEbpage-Animated-Image-Large.gif');
+height: 100vh;
+background-size: cover;
+background-repeat: no-repeat;
+}
+
+.hero-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    position: relative;
+    gap: 8px;
+}
+.herobuttons{
+    display: flex;
+}
+.overlay{
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    opacity: 0.6;
+    background-color: rgb(5, 4, 4);
+}
+.hero-explore{
+    border: 1px solid rgb(255, 49, 49);
+    color: rgb(255, 49, 49);
+    border-radius: 11px;
+    background: transparent;
+    margin-left: 8px;
+}
+.hero-explore:hover{
+    background-color: rgb(255, 49, 49) ;
+    color: black;
+}
+.btn-join{
+     transition: transform 0.2s ease;
+}
+.btn-join:hover{
+    transform: scale(1.10);
+   
+}
+
+
+/* programs & Classes */
+
+.card1-content{
+    display: flex;
+    justify-content: space-between;
+    /* padding-bottom: 9px; */
+}
+.badge{
+    left: 20px;
+    top: -10px;
+    background-color: rgb(255, 49, 49);
+    border-radius: 10px;
+}
+.card{
+    border-radius: 22px;
+    transition: transform 0.3s ease;
+}
+.card:hover{
+    transform: scale(1.02);
+}
+.programs ul{
+    list-style-type: circle;
+}
+/* Need Help Choosing */
+
+.needhelp{
+    background-color: #040724;
+    color: white;
+    border-radius: 12px;
+}
+.freecon{
+    border: 1px solid green;
+    background-color: green;
+    border-radius: 12px;
+    color: white;
+    padding: 6px 12px;
+}
+.freecon:hover{
+    background-color: rgb(57, 208, 57);
+    cursor: pointer;
+}
+.number{
+    background: transparent;
+    border-radius:12px ;
+    border: 1px solid grey;
+    color: white;
+    padding: 6px 12px;
+}
+
+/* membership and pricing plan */
+.memp{
+    color: rgb(255, 49, 49);
+    font-weight: 700;
+}
+.memspan{
+    font-size: small;
+    font-weight: 150;
+}
+.card > *{
+    padding-bottom: 9px;
+}
+.card > .hero-explore{
+    padding-bottom: 0px;
+}
+.card-2{
+    background-color: rgb(255, 234, 234);
+    border-color: rgb(255, 49, 49);
+}
+.card-2 .badge{
+    left: 33%;
+}
+
+/* Our Achievements */
+
+.acheivementcard h3{
+    font-weight: 700;
+}
+.acheivementcard h6{
+    color:  rgb(255, 49, 49) ;
+}
+
+/* success stories */
+
+.video-thumbnail img{
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.video-thumbnail span{
+    top: 10px;
+}
+.video-thumbnail .overlay{
+    position: absolute;
+    background: rgba(0, 0, 0, 0.3);
+    width: 100%;
+    height: 97%;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    cursor: pointer;
+}
+.video-thumbnail .position-relative{
+     transition: transform 0.3s ease;
+    }
+.video-thumbnail .position-relative:hover{  
+    transform: scale(1.03);
+}
+.video-thumbnail .position-relative:hover .overlay {
+  background: rgba(0, 0, 0, 0.1);
+}
+.avatar{
+    background: linear-gradient(to bottom right, orange, red);
+    border-radius: 50%;
+    height: 45px;
+    width: 45px;
+    text-align: center;
+    align-content: center;
+    font-size: larger;
+    color: white;
+    font-weight: 500;
+}
+.avatar-content small{
+    color: rgb(255, 49, 49) ;
+}
+.video-thumbnail{
+    border-radius: 15px; overflow: hidden;
+}
+.play-btn{
+    font-size: larger;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: red;
+    background-color: white;
+     cursor: pointer;
+}
+.scard{
+    border: 1px solid #e0e0e0;
+}
+.sbadge{
+    left: 0;
+    bottom: 0;
+    color: white;
+}
+.thumb-card{
+    height: 150px;
+}
+.thumb-card img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
