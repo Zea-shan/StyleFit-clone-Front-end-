@@ -1,6 +1,18 @@
+html, body {
+    overflow-x: hidden;
+}
+
 p{
     font-size: small;
 }
+  ul li{
+        list-style: none;
+
+    }
+     ul i{
+        color:rgb(255, 49, 49) ;
+     }
+
 /* navbar */
 
 .btnbtn{
@@ -24,6 +36,7 @@ p{
 }
 .nav-link:hover{
     color: rgb(255, 49, 49) !important;
+   
 }
 .icon-button{
     border: none;
@@ -40,12 +53,13 @@ p{
 .home{
     color: rgb(255, 49, 49) !important;
     background-color: rgb(240, 230, 230);
-       border-radius: 1rem;
+    border-radius: 1rem;
     
 }
 .nav-link{
     font-weight: 500;
-    margin-right: 10px;
+     margin-right: 5px;
+    margin-left: 5px;
 }
 
 /* hero */
@@ -65,9 +79,13 @@ background-repeat: no-repeat;
     height: 100%;
     position: relative;
     gap: 8px;
+    padding: 0 1rem;
 }
-.herobuttons{
+.hero-buttons{
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
 }
 .overlay{
     position: absolute;
@@ -95,8 +113,37 @@ background-repeat: no-repeat;
    
 }
 
+@media (max-width: 576px) {
+    .hero {
+        background-position: center center;
+    }
+    .hero .display-1 {
+        font-size: 3rem;
+        text-align: center;
+    }
+    .hero .display-6,
+    .hero p {
+        text-align: center;
+    }
+    .navbar .navbar-collapse {
+        padding: 0.5rem 0;
+    }
+    .icon-button {
+        margin-right: 0;
+    }
+    .btnbtn {
+        width: 100%;
+        max-width: 240px;
+    }
+}
 
 /* programs & Classes */
+.programs ul li::before {
+  content: "✓";
+   color:rgb(255, 49, 49) ;
+   font-size: large;
+  margin-right: 8px;
+}
 
 .card1-content{
     display: flex;
@@ -125,6 +172,7 @@ background-repeat: no-repeat;
     background-color: #040724;
     color: white;
     border-radius: 12px;
+    display: flex;
 }
 .freecon{
     border: 1px solid green;
@@ -144,8 +192,19 @@ background-repeat: no-repeat;
     color: white;
     padding: 6px 12px;
 }
+@media (max-width: 576px) {
+    .needhelp{
+        display: block;
+    }
+}
 
 /* membership and pricing plan */
+    .membership ul li::before {
+  content: "•";
+   color:rgb(255, 49, 49) ;
+   font-size: large;
+  margin-right: 8px;
+}
 .memp{
     color: rgb(255, 49, 49);
     font-weight: 700;
@@ -293,6 +352,7 @@ background-repeat: no-repeat;
 .phone{
     border: none;
     background: transparent;
+    font-size: small;
 }
 .phone:hover{
     color: rgb(255, 49, 49) ;
@@ -312,6 +372,7 @@ background-repeat: no-repeat;
 .Links{
     text-decoration: none;
     color: black;
+    font-size: small;
 }
 .Links:hover{
     color: rgb(255, 49, 49) ;
@@ -320,3 +381,11 @@ background-repeat: no-repeat;
 .footer h6{
     margin-top: 5px;
 }
+
+/* MemberShip Page */
+     .memberpagesec{
+        margin-top: 140px;
+        /* margin-bottom: 60px; */
+        text-align: center;
+     }
+   
