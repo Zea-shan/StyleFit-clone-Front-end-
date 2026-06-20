@@ -170,6 +170,7 @@ ul i {
   background-color: rgb(255, 49, 49);
   border-radius: 10px;
   padding: 5px;
+  margin-bottom: 5px;
 }
 .card {
   border-radius: 22px;
@@ -332,13 +333,34 @@ ul i {
 }
 
 .Acheivement .achievement-item {
-  flex: 0 0 280px;
-  max-width: 280px;
+  flex: 0 0 calc(100% / 4);
+  min-width: calc(100% / 4);
   scroll-snap-align: center;
 }
 
 .Acheivement .achievement-item .card {
-  min-width: 100%;
+  width: 100%;
+}
+
+@media (max-width: 992px) {
+  .Acheivement .achievement-item {
+    flex: 0 0 calc(100% / 3);
+    min-width: calc(100% / 3);
+  }
+}
+
+@media (max-width: 768px) {
+  .Acheivement .achievement-item {
+    flex: 0 0 calc(100% / 2);
+    min-width: calc(100% / 2);
+  }
+}
+
+@media (max-width: 576px) {
+  .Acheivement .achievement-item {
+    flex: 0 0 100%;
+    min-width: 100%;
+  }
 }
 
 .acheivementcard h3 {
@@ -346,6 +368,34 @@ ul i {
 }
 .acheivementcard h6 {
   color: rgb(255, 49, 49);
+}
+
+/* Carousel dots */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding: 0.5rem 0;
+}
+
+.carousel-dots .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ccc;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.carousel-dots .dot.active {
+  background-color: rgb(255, 49, 49);
+  transform: scale(1.2);
+}
+
+.carousel-dots .dot:hover {
+  background-color: rgb(255, 100, 100);
 }
 
 /* success stories */
@@ -452,46 +502,53 @@ ul i {
   padding-bottom: 11px;
 }
 /* GetDirections */
-.getdirections {
-  bottom: 20px;
-  left: 15px;
+
+/* GetDirections */
+.getdirections{
+    bottom: 20px;
+    left: 15px;
 }
-.getdirections .scard {
-  background-color: white;
-  border-radius: 11px;
-  /* padding: 5px 10px; */
+@media (max-width : 600px){
+  .getdirections{
+    display: none;
+  }
 }
-.phone {
-  border: none;
-  background: transparent;
-  font-size: small;
+.getdirections .scard{
+    background-color: white;
+    border-radius: 11px;
+    /* padding: 5px 10px; */
 }
-.phone:hover {
-  color: rgb(255, 49, 49);
+.phone{
+    border: none;
+    background: transparent;
+    font-size: small;
 }
-.iconcircle {
-  height: 28px;
-  width: 33px;
-  background-color: rgba(255, 0, 0, 0.106);
-  border-radius: 50%;
-  text-align: end;
-  margin-right: 11px;
+.phone:hover{
+    color: rgb(255, 49, 49) ;
 }
-.header {
-  display: flex;
-  align-items: center;
+.iconcircle{
+    height: 28px;
+    width:  33px;
+    background-color: rgba(255, 0, 0, 0.106);
+    border-radius: 50%;
+    text-align: end;
+    margin-right: 11px;
 }
-.Links {
-  text-decoration: none;
-  color: black;
-  font-size: small;
+.header{
+    display: flex;
+    align-items: center;
 }
-.Links:hover {
-  color: rgb(255, 49, 49);
+.Links{
+    text-decoration: none;
+    color: black;
+    font-size: small;
+}
+.Links:hover{
+    color: rgb(255, 49, 49) ;
 }
 
-.footer h6 {
-  margin-top: 5px;
+.footer h6{
+    margin-top: 5px;
 }
 
 /* MemberShip Page */
@@ -588,7 +645,7 @@ ul i {
   }
   .badge {
     left: 0.85rem;
-    top: 0.65rem;
+    top: -0.65rem;
   }
 }
 
@@ -773,14 +830,24 @@ textarea {
     flex: 0 0 100%;
     max-width: 100%;
   }
+  .directions .map {
+    margin: 0;
+    min-height: 300px;
+  }
   .directions .map iframe {
     height: 280px;
   }
+  .directions > div {
+    padding: 0;
+  }
   .getdirections {
+    position: static;
+    width: 100%;
     margin-top: 1rem;
   }
   .getdirections .scard {
     padding: 1rem;
+    margin: 0;
   }
   .getdirections .header {
     flex-wrap: wrap;
@@ -790,5 +857,6 @@ textarea {
     margin-right: 0.75rem;
   }
 }
+
 
 
