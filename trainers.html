@@ -1,0 +1,666 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>STARFIT — Trainers</title>
+    <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet"/>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <style>
+      :root {
+        --bg: #ffffff;
+        --ink: #161922;
+        --muted: #6b7280;
+        --line: #e7e8ec;
+        --pill: #f4f5f7;
+        --accent: #ef4136;
+        --accent-dark: #d6362c;
+        --star: #ef4136;
+        --radius: 16px;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: "Manrope", sans-serif;
+        color: var(--ink);
+        background: var(--bg);
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: "Sora", sans-serif;
+        margin: 0;
+      }
+
+      /* NAVBAR */
+     
+.btnbtn {
+  background-color: rgb(255 49 49);
+  border: 2px;
+  color: white;
+  border-radius: 10px;
+}
+.btnbtn:hover {
+  color: white;
+  background-color: rgb(208, 23, 23);
+}
+.brandimg {
+  height: 2.5rem;
+  width: auto;
+}
+.nav-item:hover {
+  background-color: white;
+  border-radius: 1rem;
+}
+.nav-link:hover {
+  color: rgb(255, 49, 49) !important;
+}
+.icon-button {
+  border: none;
+  background: transparent;
+  border-radius: 3px;
+  margin-right: 20px;
+  height: 35px;
+  width: 35px;
+}
+.icon-button:hover {
+  background-color: white;
+  color: rgb(255, 49, 49);
+}
+
+.nav-link {
+  font-weight: 700;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+.navbar {
+  background-color: rgb(255, 252, 252);
+}
+
+      /* HERO */
+      .hero {
+        text-align: center;
+        padding: 64px 20px 36px;
+        max-width: 720px;
+        margin: auto;
+        margin-top: 40px;
+      }
+      .hero h1 {
+        font-size: 48px;
+        line-height: 1.1;
+        letter-spacing: -1px;
+      }
+      .hero p {
+        color: var(--muted);
+        font-size: 17px;
+        margin-top: 16px;
+        line-height: 1.6;
+      }
+
+      /* SEARCH */
+      .search-wrap {
+        max-width: 700px;
+        margin: 32px auto 0;
+        padding: 0 20px;
+      }
+      .search-box {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border: 1.5px solid var(--line);
+        border-radius: 14px;
+        padding: 14px 18px;
+      }
+      .search-box svg {
+        flex-shrink: 0;
+        color: var(--muted);
+      }
+      .search-box input {
+        border: none;
+        outline: none;
+        font-size: 15px;
+        width: 100%;
+        font-family: inherit;
+        color: var(--ink);
+      }
+      .search-box input::placeholder {
+        color: #a4a7b0;
+      }
+
+      /* FILTERS */
+      .filters {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        flex-wrap: wrap;
+        max-width: 1000px;
+        margin: 28px auto 0;
+        padding: 0 20px;
+      }
+      .chip {
+        border: 1.5px solid var(--line);
+        background: #fff;
+        color: var(--ink);
+        padding: 10px 18px;
+        border-radius: 30px;
+        font-weight: 600;
+        font-size: 14px;
+        cursor: pointer;
+        transition: 0.15s;
+      }
+      .chip:hover {
+        border-color: var(--accent);
+      }
+      .chip.active {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: #fff;
+      }
+
+      /* SECTION HEADER */
+      .section-head {
+        text-align: center;
+        padding: 64px 20px 8px;
+      }
+      .section-head h2 {
+        font-size: 34px;
+        letter-spacing: -0.5px;
+      }
+      .section-head p {
+        color: var(--muted);
+        margin-top: 10px;
+        font-size: 16px;
+      }
+      .count {
+        color: #9aa0ab;
+        font-size: 14px;
+        margin-top: 6px;
+      }
+
+      /* GRID */
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        max-width: 1180px;
+        margin: 36px auto 80px;
+        padding: 0 20px;
+      }
+      @media (max-width: 980px) {
+        .grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 680px) {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+        nav {
+          display: none;
+        }
+      }
+
+      .card {
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 22px;
+        display: flex;
+        flex-direction: column;
+        background: #fff;
+        transition:
+          box-shadow 0.2s,
+          transform 0.2s;
+      }
+      .card:hover {
+        box-shadow: 0 12px 28px rgba(20, 20, 30, 0.08);
+        transform: translateY(-2px);
+      }
+      .card-top {
+        display: flex;
+        gap: 14px;
+        align-items: center;
+      }
+      .avatar {
+        width: 58px;
+        height: 58px;
+        border-radius: 50%;
+        object-fit: cover;
+        background: var(--pill);
+        flex-shrink: 0;
+      }
+      .card-top h3 {
+        font-size: 17px;
+      }
+      .role {
+        color: var(--accent);
+        font-weight: 700;
+        font-size: 13.5px;
+        margin-top: 2px;
+      }
+      .rating {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        margin-top: 6px;
+        font-size: 13.5px;
+        color: var(--muted);
+      }
+      .rating .star {
+        color: var(--star);
+      }
+      .rating b {
+        color: var(--ink);
+      }
+
+      .badges {
+        display: flex;
+        gap: 8px;
+        margin: 16px 0 14px;
+        flex-wrap: wrap;
+      }
+      .badge {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 12.5px;
+        font-weight: 600;
+        padding: 6px 11px;
+        border-radius: 20px;
+        background: var(--pill);
+        color: var(--ink);
+      }
+      .badge.years {
+        background: #fdebe9;
+        color: var(--accent-dark);
+      }
+
+      .specialty {
+        font-size: 13px;
+        color: var(--muted);
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.4px;
+        margin-bottom: 8px;
+      }
+      .desc {
+        font-size: 14.5px;
+        color: #454854;
+        line-height: 1.55;
+        flex-grow: 1;
+      }
+
+      .tags {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin: 16px 0;
+      }
+      .tag {
+        font-size: 12.5px;
+        background: var(--pill);
+        padding: 6px 11px;
+        border-radius: 8px;
+        color: #3b3e47;
+        font-weight: 500;
+      }
+      .tag.more {
+        background: transparent;
+        color: #9aa0ab;
+        padding-left: 0;
+      }
+
+      .card-foot {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: auto;
+        padding-top: 14px;
+        border-top: 1px solid var(--line);
+      }
+      .socials {
+        display: flex;
+        gap: 14px;
+        color: #b3b6bf;
+      }
+      .book-btn {
+        background: var(--accent);
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 24px;
+        font-weight: 700;
+        font-size: 13.5px;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+      .book-btn:hover {
+        background: var(--accent-dark);
+      }
+
+      .empty {
+        text-align: center;
+        color: var(--muted);
+        padding: 60px 0;
+        display: none;
+        font-size: 15px;
+      }
+
+      /* FLOATING CONTACT BUTTONS */
+      .float-actions {
+        position: fixed;
+        right: 24px;
+        bottom: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        z-index: 60;
+      }
+      .fab {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        cursor: pointer;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+        border: none;
+      }
+      .fab.wa {
+        background: #25d366;
+      }
+      .fab.call {
+        background: #2563eb;
+      }
+      .fab.chat {
+        background: #161922;
+      }
+    </style>
+  </head>
+  <body>
+       <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top mb-3" style="background-color: rgba(255,255,255,0.9)">
+    <div class="container-fluid px-md-5"> 
+    <a class="navbar-brand" href="#"><img src="https://stayfit.pk/stayfit.png" alt="" class="brandimg"></a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mx-auto">
+      <li class="nav-item active">
+        <a class="nav-link " href="index.html">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="programs.html">Programs</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-link " style=" color: rgb(255, 49, 49);
+  background-color: rgb(240, 230, 230);
+  border-radius: 1rem;" href="trainers.html">Trainers</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link " href="membership-page.htm">Pricing</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link " href="blog.html">Blog</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link " href="contactus.html">Contact</a>
+      </li>
+    </ul>
+    <button class="search-btn icon-button">
+        <i class="bi bi-search"></i>
+    </button>
+    <button class="btn btnbtn fw-bold my-2 my-sm-0" type="submit">Join Now</button>
+   
+  </div>
+</div>
+   
+</nav>
+
+
+    <section class="hero">
+      <h1>Meet Our Expert Trainers</h1>
+      <p>
+        Our certified fitness professionals are dedicated to helping you achieve
+        your goals with personalized guidance.
+      </p>
+    </section>
+
+    <div class="search-wrap">
+      <div class="search-box">
+        <svg
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <circle cx="11" cy="11" r="7" />
+          <line x1="21" y1="21" x2="16.65" y2="16.65" />
+        </svg>
+        <input
+          id="searchInput"
+          type="text"
+          placeholder="Search by name, specialty, or role..."
+        />
+      </div>
+    </div>
+
+    <div class="filters" id="filters">
+      <button class="chip active" data-filter="All">All</button>
+      <button class="chip" data-filter="Strength & Body Building">
+        Strength & Body Building
+      </button>
+      <button class="chip" data-filter="Cardio & Weight Loss">
+        Cardio & Weight Loss
+      </button>
+      <button class="chip" data-filter="Mixed Martial Arts">
+        Mixed Martial Arts
+      </button>
+      <button class="chip" data-filter="Yoga & Wellness">
+        Yoga & Wellness
+      </button>
+      <button class="chip" data-filter="Nutrition Coaching">
+        Nutrition Coaching
+      </button>
+      <button class="chip" data-filter="Group Fitness">Group Fitness</button>
+      <button class="chip" data-filter="HIIT Training">HIIT Training</button>
+    </div>
+
+    <div class="section-head">
+      <h2>Our Training Team</h2>
+      <p>Meet the professionals who will guide you on your fitness journey</p>
+      <div class="count" id="countLabel">Showing 6 of 6 trainers</div>
+    </div>
+
+    <div class="grid" id="grid"></div>
+    <div class="empty" id="emptyState">
+      No trainers match your search. Try a different name, role, or specialty.
+    </div>
+
+    <div class="float-actions">
+      <button class="fab wa" title="WhatsApp">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M17.5 14.4c-.3-.1-1.7-.8-1.9-.9-.3-.1-.5-.1-.6.1-.2.3-.7.9-.9 1-.2.2-.3.2-.6.1-.9-.4-1.8-1-2.6-1.8-.7-.7-1.3-1.5-1.7-2.4-.1-.2 0-.4.1-.5.2-.2.4-.4.5-.6.1-.2.1-.4 0-.6-.1-.2-.6-1.5-.8-2-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.7.7-1 1.6-1 2.6.1 1.2.6 2.4 1.4 3.5 1.5 2.1 3.3 3.6 5.6 4.5 1.1.4 2.2.6 3.3.3.7-.2 1.4-.7 1.8-1.4.2-.4.2-.9.1-1.3 0-.2-.2-.3-.4-.4zM12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.6 1.4 5.1L2 22l5-1.3c1.4.8 3.1 1.2 4.9 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2z"
+          />
+        </svg>
+      </button>
+      <button class="fab call" title="Call">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M6.6 10.8c1.4 2.7 3.7 5 6.4 6.4l2.1-2.1c.3-.3.7-.4 1-.2 1.1.5 2.4.8 3.6.8.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.3c.6 0 1 .4 1 1 0 1.3.3 2.5.8 3.6.1.4 0 .8-.3 1l-2.2 2.2z"
+          />
+        </svg>
+      </button>
+      <button class="fab chat" title="Chat">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M12 2C6.5 2 2 5.9 2 10.5c0 2.3 1.1 4.3 2.9 5.8L4 22l4.6-2.1c1 .3 2.2.4 3.4.4 5.5 0 10-3.9 10-8.8S17.5 2 12 2z"
+          />
+        </svg>
+      </button>
+    </div>
+
+    <script>
+      const trainers = [
+        {
+          name: "Irtaza Ahmad",
+          role: "Senior Trainer",
+          rating: 5,
+          clients: "500+ clients",
+          years: "10+ Years",
+          hours: "Mon-Fri: 6AM-10PM",
+          category: "Strength & Body Building",
+          desc: "Senior trainer with extensive experience in strength training, bodybuilding, and fitness transformation.",
+          tags: ["Bodybuilding", "Powerlifting", "Strength Training", "+1"],
+          img: "https://i.pravatar.cc/120?img=12",
+        },
+        {
+          name: "Ammar Asif",
+          role: "Senior Trainer",
+          rating: 4.9,
+          clients: "350+ clients",
+          years: "8+ Years",
+          hours: "Mon-Fri: 5AM-9PM",
+          category: "Cardio & Weight Loss",
+          desc: "Senior trainer focused on holistic fitness approach combining strength training, cardio, and nutrition.",
+          tags: ["Weight Loss", "Cardio Training", "Nutrition Coaching", "+1"],
+          img: "https://i.pravatar.cc/120?img=51",
+        },
+        {
+          name: "Hassan Ali",
+          role: "MMA Instructor",
+          rating: 4.8,
+          clients: "200+ clients",
+          years: "12+ Years",
+          hours: "Mon-Fri: 4PM-10PM",
+          category: "Mixed Martial Arts",
+          desc: "Professional MMA instructor with extensive combat sports background. Trained in multiple disciplines.",
+          tags: ["MMA", "Brazilian Jiu-Jitsu", "Muay Thai", "+1"],
+          img: "https://i.pravatar.cc/120?img=14",
+        },
+        {
+          name: "Sarah Khan",
+          role: "Fitness Instructor",
+          rating: 4.8,
+          clients: "250+ clients",
+          years: "6+ Years",
+          hours: "Mon-Fri: 7AM-9PM",
+          category: "Yoga & Wellness",
+          desc: "Certified yoga instructor focused on mindfulness and holistic wellness. Specializes in stress relief, flexibility.",
+          tags: ["Yoga", "Pilates", "Meditation", "+1"],
+          img: "https://i.pravatar.cc/120?img=47",
+        },
+        {
+          name: "Alina Riaz",
+          role: "Nutrition Coach",
+          rating: 4.9,
+          clients: "400+ clients",
+          years: "5+ Years",
+          hours: "Mon-Fri: 9AM-7PM",
+          category: "Nutrition Coaching",
+          desc: "Expert nutrition coach providing personalized meal plans and dietary guidance. Helps clients optimize results.",
+          tags: ["Weight Loss", "Muscle Building", "Sports Nutrition", "+1"],
+          img: "https://i.pravatar.cc/120?img=32",
+        },
+        {
+          name: "Ayesha Malik",
+          role: "Group Fitness Instructor",
+          rating: 4.7,
+          clients: "300+ clients",
+          years: "7+ Years",
+          hours: "Mon-Fri: 6AM-8PM",
+          category: "Group Fitness",
+          desc: "Energetic group fitness instructor specializing in high-intensity workouts and dance fitness. Creates fun classes.",
+          tags: ["HIIT", "Zumba", "Group Fitness", "+1"],
+          img: "https://i.pravatar.cc/120?img=44",
+        },
+      ];
+
+      const grid = document.getElementById("grid");
+      const countLabel = document.getElementById("countLabel");
+      const emptyState = document.getElementById("emptyState");
+      const searchInput = document.getElementById("searchInput");
+      const filterButtons = document.querySelectorAll(".chip");
+
+      let activeFilter = "All";
+
+      function render() {
+        const query = searchInput.value.trim().toLowerCase();
+        const filtered = trainers.filter((t) => {
+          const matchesFilter =
+            activeFilter === "All" || t.category === activeFilter;
+          const matchesSearch =
+            !query ||
+            t.name.toLowerCase().includes(query) ||
+            t.role.toLowerCase().includes(query) ||
+            t.category.toLowerCase().includes(query);
+          return matchesFilter && matchesSearch;
+        });
+
+        grid.innerHTML = filtered
+          .map(
+            (t) => `
+    <div class="card">
+      <div class="card-top">
+        <img class="avatar" src="${t.img}" alt="${t.name}">
+        <div>
+          <h3>${t.name}</h3>
+          <div class="role">${t.role}</div>
+          <div class="rating"><span class="star">★</span><b>${t.rating}</b> · ${t.clients}</div>
+        </div>
+      </div>
+      <div class="badges">
+        <span class="badge years">🏆 ${t.years}</span>
+        <span class="badge">🕒 ${t.hours}</span>
+      </div>
+      <div class="specialty">${t.category}</div>
+      <div class="desc">${t.desc}</div>
+      <div class="tags">
+        ${t.tags.map((tag) => `<span class="tag ${tag === "+1" ? "more" : ""}">${tag}</span>`).join("")}
+      </div>
+      <div class="card-foot">
+        <div class="socials">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="3.5"/><circle cx="17.2" cy="6.8" r="0.6" fill="currentColor"/></svg>
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zM8.3 18H5.7V9.6h2.6V18zM7 8.4a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM18.5 18h-2.6v-4.3c0-1-.4-1.7-1.3-1.7-.7 0-1.1.5-1.3 1-.1.2-.1.5-.1.7V18h-2.6s.03-7.7 0-8.4h2.6v1.2c.3-.5 1-1.3 2.4-1.3 1.8 0 3.1 1.1 3.1 3.6V18z"/></svg>
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6.6 10.8c1.4 2.7 3.7 5 6.4 6.4l2.1-2.1c.3-.3.7-.4 1-.2 1.1.5 2.4.8 3.6.8.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.3c.6 0 1 .4 1 1 0 1.3.3 2.5.8 3.6.1.4 0 .8-.3 1l-2.2 2.2z"/></svg>
+        </div>
+        <button class="book-btn">Book Session</button>
+      </div>
+    </div>
+  `,
+          )
+          .join("");
+
+        countLabel.textContent = `Showing ${filtered.length} of ${trainers.length} trainers`;
+        emptyState.style.display = filtered.length === 0 ? "block" : "none";
+      }
+
+      filterButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          filterButtons.forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+          activeFilter = btn.dataset.filter;
+          render();
+        });
+      });
+
+      searchInput.addEventListener("input", render);
+
+      render();
+    </script>
+    
+<script src="script.js"></script>
+
+ <script src="bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
+  </body>
+</html>

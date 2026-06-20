@@ -1,0 +1,736 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StayFit Blog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+      :root {
+        --bg: #ffffff;
+        --section-bg: #f7f8fa;
+        --ink: #161922;
+        --muted: #6b7280;
+        --line: #e7e8ec;
+        --pill: #f4f5f7;
+        --accent: #ef4136;
+        --accent-dark: #d6362c;
+        --gold: #f3c34c;
+        --radius: 16px;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: "Manrope", sans-serif;
+        color: var(--ink);
+        background: var(--bg);
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: "Sora", sans-serif;
+        margin: 0;
+      }
+
+      /* NAVBAR */
+      
+
+
+.btnbtn {
+  background-color: rgb(255 49 49);
+  border: 2px;
+  color: white;
+  border-radius: 10px;
+}
+.btnbtn:hover {
+  color: white;
+  background-color: rgb(208, 23, 23);
+}
+.brandimg {
+  height: 2.5rem;
+  width: auto;
+}
+.nav-item:hover {
+  background-color: white;
+  border-radius: 1rem;
+}
+.nav-link:hover {
+  color: rgb(255, 49, 49) !important;
+}
+.icon-button {
+  border: none;
+  background: transparent;
+  border-radius: 3px;
+  margin-right: 20px;
+  height: 35px;
+  width: 35px;
+}
+.icon-button:hover {
+  background-color: white;
+  color: rgb(255, 49, 49);
+}
+
+.nav-link {
+  font-weight: 700;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+.navbar {
+  background-color: rgb(255, 252, 252);
+}
+
+
+      /* HERO */
+      .hero {
+        text-align: center;
+        padding: 60px 20px 30px;
+        max-width: 680px;
+        margin: auto;
+        margin-top: 50px;
+      }
+      .hero h1 {
+        font-size: 42px;
+        letter-spacing: -1px;
+      }
+      .hero p {
+        color: var(--muted);
+        font-size: 16px;
+        margin-top: 14px;
+        line-height: 1.6;
+      }
+
+      .search-wrap {
+        max-width: 680px;
+        margin: 28px auto 0;
+        padding: 0 20px;
+      }
+      .search-box {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border: 1.5px solid var(--line);
+        border-radius: 14px;
+        padding: 13px 18px;
+      }
+      .search-box svg {
+        flex-shrink: 0;
+        color: var(--muted);
+      }
+      .search-box input {
+        border: none;
+        outline: none;
+        font-size: 15px;
+        width: 100%;
+        font-family: inherit;
+        color: var(--ink);
+      }
+      .search-box input::placeholder {
+        color: #a4a7b0;
+      }
+
+      .filters {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        flex-wrap: wrap;
+        max-width: 1000px;
+        margin: 24px auto 0;
+        padding: 0 20px;
+      }
+      .chip {
+        border: 1.5px solid var(--line);
+        background: #fff;
+        color: var(--ink);
+        padding: 9px 17px;
+        border-radius: 30px;
+        font-weight: 600;
+        font-size: 13.5px;
+        cursor: pointer;
+        transition: 0.15s;
+      }
+      .chip:hover {
+        border-color: var(--accent);
+      }
+      .chip.active {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: #fff;
+      }
+
+      /* FEATURED */
+      .featured-wrap {
+        max-width: 1180px;
+        margin: 56px auto 0;
+        padding: 0 20px;
+      }
+      .featured-wrap h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+      .featured-card {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        overflow: hidden;
+      }
+      .featured-img {
+        background: #111317;
+        min-height: 340px;
+        position: relative;
+        overflow: hidden;
+      }
+      .featured-img img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
+      }
+      .featured-body {
+        padding: 32px;
+        display: flex;
+        flex-direction: column;
+      }
+      .badge-row {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        margin-bottom: 14px;
+      }
+      .tag-featured {
+        background: var(--accent);
+        color: #fff;
+        font-size: 11.5px;
+        font-weight: 700;
+        padding: 4px 10px;
+        border-radius: 5px;
+        letter-spacing: 0.4px;
+      }
+      .tag-cat {
+        color: var(--muted);
+        font-size: 12.5px;
+        font-weight: 600;
+      }
+      .featured-body h3 {
+        font-size: 23px;
+        line-height: 1.3;
+        margin-bottom: 16px;
+      }
+      .featured-excerpt {
+        background: var(--pill);
+        border-left: 3px solid var(--accent);
+        padding: 14px 16px;
+        border-radius: 6px;
+        font-style: italic;
+        color: #454854;
+        font-size: 14px;
+        line-height: 1.65;
+        margin-bottom: 18px;
+      }
+      .author-row {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: auto;
+        padding-top: 14px;
+        border-top: 1px solid var(--line);
+      }
+      .author-dot {
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        background: var(--pill);
+      }
+      .author-name {
+        font-size: 13.5px;
+        font-weight: 700;
+      }
+      .author-date {
+        font-size: 12px;
+        color: var(--muted);
+      }
+
+      /* LATEST ARTICLES */
+      .section-head {
+        text-align: center;
+        padding: 64px 20px 6px;
+        background: var(--section-bg);
+      }
+      .section-head h2 {
+        font-size: 30px;
+      }
+      .section-head p {
+        color: var(--muted);
+        margin-top: 8px;
+        font-size: 14px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 36px 20px 90px;
+        background: var(--section-bg);
+      }
+      @media (max-width: 980px) {
+        .grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .featured-card {
+          grid-template-columns: 1fr;
+        }
+      }
+      @media (max-width: 680px) {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+        nav {
+          display: none;
+        }
+      }
+
+      .article-card {
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        overflow: hidden;
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+        transition:
+          box-shadow 0.2s,
+          transform 0.2s;
+        cursor: pointer;
+      }
+      .article-card:hover {
+        box-shadow: 0 12px 28px rgba(20, 20, 30, 0.08);
+        transform: translateY(-2px);
+      }
+      .thumb {
+        position: relative;
+        height: 360px;
+        overflow: hidden;
+        background: var(--pill);
+      }
+      .thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      .cat-pill {
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        background: var(--accent);
+        color: #fff;
+        font-size: 11px;
+        font-weight: 700;
+        padding: 4px 10px;
+        border-radius: 5px;
+        z-index: 2;
+      }
+      .article-body {
+        padding: 18px 18px 20px;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+      }
+      .article-body h3 {
+        font-size: 15.5px;
+        line-height: 1.4;
+        margin-bottom: 8px;
+      }
+      .article-body p {
+        font-size: 13px;
+        color: var(--muted);
+        line-height: 1.55;
+        margin: 0 0 14px;
+        flex-grow: 1;
+      }
+      .meta-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 12px;
+        color: var(--muted);
+        margin-bottom: 10px;
+      }
+      .meta-row .by {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+      .read-more {
+        color: var(--accent);
+        font-weight: 700;
+        font-size: 13px;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+
+      .empty {
+        text-align: center;
+        color: var(--muted);
+        padding: 60px 0;
+        display: none;
+        font-size: 15px;
+        background: var(--section-bg);
+      }
+
+      .float-actions {
+        position: fixed;
+        right: 24px;
+        bottom: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        z-index: 60;
+      }
+      .fab {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        cursor: pointer;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+        border: none;
+      }
+      .fab.wa {
+        background: #25d366;
+      }
+      .fab.call {
+        background: #2563eb;
+      }
+      .fab.chat {
+        background: #161922;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top mb-3" style="background-color: rgba(255,255,255,0.9)">
+    <div class="container-fluid px-md-5"> 
+    <a class="navbar-brand" href="#"><img src="https://stayfit.pk/stayfit.png" alt="" class="brandimg"></a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mx-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="index.html">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="programs.html">Programs</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-link " href="trainers.html">Trainers</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link " href="membership-page.htm">Pricing</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link " style=" color: rgb(255, 49, 49);
+          background-color: rgb(240, 230, 230);
+          border-radius: 1rem;" href="blog.html">Blog</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link " href="contactus.html">Contact</a>
+      </li>
+    </ul>
+    <button class="search-btn icon-button">
+        <i class="bi bi-search"></i>
+    </button>
+    <button class="btn btnbtn fw-bold my-2 my-sm-0" type="submit">Join Now</button>
+   
+  </div>
+</div>
+   
+</nav>
+
+
+    <section class="hero">
+      <h1>StayFit Blog</h1>
+      <p>
+        Workouts, nutrition, recovery, and everything you need to build a
+        stronger, healthier life.
+      </p>
+    </section>
+
+    <div class="search-wrap">
+      <div class="search-box">
+        <svg
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <circle cx="11" cy="11" r="7" />
+          <line x1="21" y1="21" x2="16.65" y2="16.65" />
+        </svg>
+        <input id="searchInput" type="text" placeholder="Search articles..." />
+      </div>
+    </div>
+
+    <div class="filters" id="filters">
+      <button class="chip active" data-filter="All">All</button>
+      <button class="chip" data-filter="Workout Tips">Workout Tips</button>
+      <button class="chip" data-filter="Nutrition">Nutrition</button>
+      <button class="chip" data-filter="Weight Loss">Weight Loss</button>
+      <button class="chip" data-filter="Muscle Gain">Muscle Gain</button>
+      <button class="chip" data-filter="Recovery">Recovery</button>
+      <button class="chip" data-filter="Motivation">Motivation</button>
+      <button class="chip" data-filter="Lifestyle">Lifestyle</button>
+      <button class="chip" data-filter="Beginner Guides">
+        Beginner Guides
+      </button>
+    </div>
+
+    <div class="featured-wrap" id="featuredWrap">
+      <h2>Featured Article</h2>
+      <div class="featured-card ">
+        <div class="featured-img">
+          <img src="/Images/blog1.png" alt="Featured article" />
+        </div>
+        <div class="featured-body">
+          <div class="badge-row">
+            <span class="tag-featured">FEATURED</span>
+            <span class="tag-cat">· Workout Tips</span>
+          </div>
+          <h3>
+            Why You Should Train at 5 AM: The Science Behind Morning Workouts
+          </h3>
+          <div class="featured-excerpt">
+            Research from the British Journal of Sports Medicine shows that
+            morning exercisers burn up to 20% more body fat than those who train
+            later. Early training spikes cortisol at its natural peak, primes
+            your body for a fat-oxidizing state, and builds a level of mental
+            fortitude that carries you through the toughest challenges of the
+            day. By winning the morning, you win the day. This guide covers the
+            biological adaptation phase, specific light exposure protocols to
+            reset your internal clock, and the "No-Think" morning routine used
+            by elite athletes. Real strength is built in the moments the world
+            doesn't see. Motivation might get you started, but it is your
+            unbreakable consistency that will ultimately carry you across the
+            finish line of your transformation.
+          </div>
+          <div class="author-row">
+            <div class="author-dot"></div>
+            <div>
+              <div class="author-name">StayFit Team</div>
+              <div class="author-date">March 5, 2026</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-head">
+      <h2>Latest Articles</h2>
+      <p id="countLabel">9 articles</p>
+    </div>
+    <div class="grid" id="grid"></div>
+    <div class="empty" id="emptyState">
+      No articles match your search. Try a different keyword or category.
+    </div>
+
+    <div class="float-actions">
+      <button class="fab wa" title="WhatsApp">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M17.5 14.4c-.3-.1-1.7-.8-1.9-.9-.3-.1-.5-.1-.6.1-.2.3-.7.9-.9 1-.2.2-.3.2-.6.1-.9-.4-1.8-1-2.6-1.8-.7-.7-1.3-1.5-1.7-2.4-.1-.2 0-.4.1-.5.2-.2.4-.4.5-.6.1-.2.1-.4 0-.6-.1-.2-.6-1.5-.8-2-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.7.7-1 1.6-1 2.6.1 1.2.6 2.4 1.4 3.5 1.5 2.1 3.3 3.6 5.6 4.5 1.1.4 2.2.6 3.3.3.7-.2 1.4-.7 1.8-1.4.2-.4.2-.9.1-1.3 0-.2-.2-.3-.4-.4zM12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.6 1.4 5.1L2 22l5-1.3c1.4.8 3.1 1.2 4.9 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2z"
+          />
+        </svg>
+      </button>
+      <button class="fab call" title="Call">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M6.6 10.8c1.4 2.7 3.7 5 6.4 6.4l2.1-2.1c.3-.3.7-.4 1-.2 1.1.5 2.4.8 3.6.8.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.3c.6 0 1 .4 1 1 0 1.3.3 2.5.8 3.6.1.4 0 .8-.3 1l-2.2 2.2z"
+          />
+        </svg>
+      </button>
+      <button class="fab chat" title="Chat">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M12 2C6.5 2 2 5.9 2 10.5c0 2.3 1.1 4.3 2.9 5.8L4 22l4.6-2.1c1 .3 2.2.4 3.4.4 5.5 0 10-3.9 10-8.8S17.5 2 12 2z"
+          />
+        </svg>
+      </button>
+    </div>
+
+    <script>
+      // Each article has an `img` field — paste the real image link there.
+      // Look for the PASTE_IMAGE_LINK_HERE_# comments to find each one quickly.
+      const articles = [
+        {
+          category: "Nutrition",
+          img: "/Images/blog2.png", // Stay Healthy / Stay Strong poster
+          title:
+            "The Real Truth About Protein: How Much You Actually Need Per Day",
+          excerpt:
+            "Forget the bro science. A 2025 meta-analysis of 49 studies found that 1.6g of protein per kilogram of bodyweight is the real sweet spot.",
+          author: "Ammar Asif",
+          readTime: "8 min read",
+        },
+        {
+          category: "Weight Loss",
+          img: "/Images/blog4.png", // Before / After poster
+          title:
+            "Body Recomposition: How to Burn Fat and Build Muscle at the Same Time",
+          excerpt:
+            "The fitness industry told you it's impossible — pick bulking or cutting. Science disagrees: a landmark 2024 study proves otherwise.",
+          author: "StayFit Team",
+          readTime: "6 min read",
+        },
+        {
+          category: "Muscle Gain",
+          img: "/Images/blog8.png", // Hustle for that muscle poster
+          title:
+            "Progressive Overload Explained: The Only Law of Muscle Growth That Matters",
+          excerpt:
+            "Your muscles don't grow because you showed up — they grow because you forced them to adapt, week after week.",
+          author: "Ammar Asif",
+          readTime: "6 min read",
+        },
+        {
+          category: "Recovery",
+          img: "/Images/blog5.png", // How to recover after a workout poster
+          title: "5 Science-Backed Ways to Recover Faster Between Sessions",
+          excerpt:
+            "Recovery isn't a rest day, it's a training tool. Here's how sleep, mobility work, and nutrition timing speed up repair.",
+          author: "StayFit Team",
+          readTime: "5 min read",
+        },
+        {
+          category: "Beginner Guides",
+          img: "/Images/blog6.png", // Workout mistake poster
+          title:
+            "5 Workout Mistakes Every Beginner Makes (And How to Fix Them)",
+          excerpt:
+            "Skipping warm-ups and chasing heavy weight too soon are the fastest ways to stall progress. Here's what to do instead.",
+          author: "Hassan Ali",
+          readTime: "4 min read",
+        },
+        {
+          category: "Motivation",
+          img: "/Images/blog7.png", // This is a work of... poster
+          title: "This Is a Work of Consistency, Self-Growth, and Discipline",
+          excerpt:
+            "Motivation fades by week two. The athletes who succeed are the ones who built a system that doesn't depend on feeling like it.",
+          author: "StayFit Team",
+          readTime: "3 min read",
+        },
+        {
+          category: "Workout Tips",
+          img: "/Images/blog10.png",
+          title: "5 Compound Lifts Every Beginner Should Master First",
+          excerpt:
+            "Squats, deadlifts, and presses build more strength per minute than any machine. Here's how to learn them safely.",
+          author: "Irtaza Ahmad",
+          readTime: "7 min read",
+        },
+        {
+          category: "Lifestyle",
+          img: "/Images/blog9.png",
+          title: "Building a Fitness Routine That Actually Fits Your Life",
+          excerpt:
+            "The best workout plan is the one you'll repeat. Here's how to design a routine around your real schedule, not an ideal one.",
+          author: "Sarah Khan",
+          readTime: "5 min read",
+        },
+        {
+          category: "Nutrition",
+          img: "/Images/blog2.png",
+          title: "Meal Timing Myths: Does When You Eat Actually Matter?",
+          excerpt:
+            "The anabolic window isn't 30 minutes — it's closer to several hours. Here's what the latest nutrition research really says.",
+          author: "Alina Riaz",
+          readTime: "6 min read",
+        },
+      ];
+
+      const grid = document.getElementById("grid");
+      const countLabel = document.getElementById("countLabel");
+      const emptyState = document.getElementById("emptyState");
+      const searchInput = document.getElementById("searchInput");
+      const filterButtons = document.querySelectorAll(".chip");
+
+      let activeFilter = "All";
+
+      function render() {
+        const query = searchInput.value.trim().toLowerCase();
+        const filtered = articles.filter((a) => {
+          const matchesFilter =
+            activeFilter === "All" || a.category === activeFilter;
+          const matchesSearch =
+            !query ||
+            a.title.toLowerCase().includes(query) ||
+            a.category.toLowerCase().includes(query) ||
+            a.excerpt.toLowerCase().includes(query);
+          return matchesFilter && matchesSearch;
+        });
+
+        grid.innerHTML = filtered
+          .map(
+            (a) => `
+    <div class="article-card">
+      <div class="thumb">
+        <span class="cat-pill">${a.category}</span>
+        <img src="${a.img}" alt="${a.title}">
+      </div>
+      <div class="article-body">
+        <h3>${a.title}</h3>
+        <p>${a.excerpt}</p>
+        <div class="meta-row">
+          <span class="by">👤 ${a.author}</span>
+          <span>🕒 ${a.readTime}</span>
+        </div>
+        <a class="read-more" href="#">Read More →</a>
+      </div>
+    </div>
+  `,
+          )
+          .join("");
+
+        countLabel.textContent = `${filtered.length} article${filtered.length === 1 ? "" : "s"}`;
+        emptyState.style.display = filtered.length === 0 ? "block" : "none";
+        document.getElementById("featuredWrap").style.display =
+          activeFilter === "All" && !query ? "block" : "none";
+      }
+
+      filterButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          filterButtons.forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+          activeFilter = btn.dataset.filter;
+          render();
+        });
+      });
+
+      searchInput.addEventListener("input", render);
+
+      render();
+    </script>
+    
+<script src="script.js"></script>
+
+ <script src="bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
+  </body>
+</html>
